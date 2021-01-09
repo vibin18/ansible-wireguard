@@ -28,11 +28,10 @@
     update_cache: yes
 
 - name: "Display post dependency install message || Dependency packages."
-  vars:
-    post_install: |
-      Things left to do:
-        - REEBOT THE PI NOW
-        - Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard
-  debug: msg={{ post_install.split('\n') }
+  debug:
+    msg:
+        - 'Things left to do:'
+        - '- REEBOT THE PI NOW'
+        - ' -Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard'
 
 
