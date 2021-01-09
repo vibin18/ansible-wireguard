@@ -1,0 +1,9 @@
+wireguard_masters:
+  hosts:
+    vittiac-vpn:
+      ansible_host: 192.168.178.71
+
+wireguard_peers:
+  hosts:
+    ayroor00:
+      ansible_host: 192.168.178.71

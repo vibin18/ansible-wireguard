@@ -1,0 +1,28 @@
+- name: "Add unstable repository into sources list || Dependency packages."
+  apt_repository:
+    repo: deb http://deb.debian.org/debian/ unstable main
+    state: present
+
+- name: "Changing apt pinning priorities || Dependency packages."
+  template:
+    src: "/{{ lookup('env', 'PWD') }}/roles/dep-install/files/limit-unstable.j2"
+    dest: "/etc/apt/preferences.d/limit-unstable"
+    owner: root
+    group: root
+
+- name: "Add apt-keys from ubuntu keyserver || Dependency packages."
+  apt_key:
+    keyserver: "{{ item.server }}"
+    id: "{{ item.id }}"
+  loop:
+    - { server: 'keyserver.ubuntu.com:80', id: '8B48AD6246925553' }
+    - { server: 'keyserver.ubuntu.com:80', id: '7638D0442B90D010' }
+    - { server: 'keyserver.ubuntu.com:80', id: '04EE7237B7D453EC' }
+
+- name: "Install packages || Dependency packages."
+  apt:
+    pkg:
+    - dirmngr
+    - wireguard
+    state: present
+    update_cache: yes
