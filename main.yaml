@@ -1,6 +1,7 @@
-- name: Setting up k8s 
+- name: Setting up wireguard 
   hosts: wireguard_peers
-
+  become: true
+  become_user: root
   roles:
     - role: pre-kernel
       tags: pre-deploy
