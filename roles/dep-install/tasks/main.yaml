@@ -17,7 +17,7 @@
   loop:
     - { server: 'keyserver.ubuntu.com:80', id: '7638D0442B90D010' }
     - { server: 'keyserver.ubuntu.com:80', id: '04EE7237B7D453EC' }
-    - { server: 'keyserver.ubuntu.com:80', id: '8B48AD6246925553' }
+#    - { server: 'keyserver.ubuntu.com:80', id: '8B48AD6246925553' }
 
 - name: "Install packages || Dependency packages."
   apt:
@@ -27,12 +27,12 @@
     state: present
     update_cache: yes
 
-  - name: "Display post dependency install message || Dependency packages."
-    vars:
-      post_install: |
-        Things left to do:
-          - REEBOT THE PI NOW
-          - Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard
-    debug: msg={{ post_install.split('\n') }
+- name: "Display post dependency install message || Dependency packages."
+  vars:
+    post_install: |
+      Things left to do:
+        - REEBOT THE PI NOW
+        - Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard
+  debug: msg={{ post_install.split('\n') }
 
 
