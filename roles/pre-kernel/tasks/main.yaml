@@ -15,6 +15,14 @@
   register: reboot_required_file
   stat: path=/var/run/reboot-required get_md5=no
 
+- name: "Display Pre-Kernel install message || Pre-Kernel Deployment."
+  debug:
+    msg: |
+      Things left to do:
+        - PI WILL REBOOT!!!
+        - Execute: ansible-playbook main.yaml -i inventory.yaml --tags dependency-install
+
+
 - name: "Reboot the box if kernel updated || Pre-Kernel Deployment."
   reboot:
     msg: "Reboot initiated by Ansible for kernel updates"

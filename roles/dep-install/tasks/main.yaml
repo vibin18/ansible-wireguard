@@ -26,3 +26,10 @@
     - wireguard
     state: present
     update_cache: yes
+
+- name: "Display post dependency install message || Dependency packages."
+  debug:
+    msg: |
+      Things left to do:
+        - REEBOOT THE PI NOW
+        - Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard
