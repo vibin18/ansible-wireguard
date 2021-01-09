@@ -31,7 +31,7 @@
   debug:
     msg:
         - 'Things left to do:'
-        - '- REEBOT THE PI NOW'
-        - ' -Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard'
+        - '- REBOOT THE PI NOW'
+        - '- Execute: ansible-playbook main.yaml -i inventory.yaml --tags setup-wireguard'
 
 
