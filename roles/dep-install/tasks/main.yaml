@@ -17,7 +17,8 @@
   loop:
     - { server: 'keyserver.ubuntu.com:80', id: '7638D0442B90D010' }
     - { server: 'keyserver.ubuntu.com:80', id: '04EE7237B7D453EC' }
-#    - { server: 'keyserver.ubuntu.com:80', id: '8B48AD6246925553' }
+    - { server: 'keyserver.ubuntu.com:80', id: '8B48AD6246925553' }
+# IF NOT WORKING use command line --- sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv <key> ---
 
 - name: "Install packages || Dependency packages."
   apt:

@@ -2,7 +2,10 @@
   apt: update_cache=yes force_apt_get=yes
 
 - name: "Upgrade all apt packages || Pre-Kernel Deployment."
-  apt: upgrade=dist force_apt_get=yes
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400 #One day
 
 - name: "Updating kernel || Pre-Kernel Deployment."
   apt:
