@@ -1,3 +1,8 @@
+- name: Register if config/private key already exists on target host
+  stat:
+    path: "{{ wireguard_remote_directory }}/{{ wireguard_interface }}.conf"
+  register: wireguard__register_config_file
+
 - name: Generate WireGuard private key
   command: "wg genkey"
   register: wireguard__register_private_key

@@ -18,6 +18,3 @@ wireguard_conf_group: "root"
 # The default mode of the wg.conf file
 wireguard_conf_mode: 0600
 
-# The wireguard register config file.
-wireguard__register_config_file: "{{ wireguard_remote_directory }}/{{ wireguard_interface }}.conf"
-
