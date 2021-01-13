@@ -9,6 +9,6 @@
     - role: dep-install
       tags: dependency-install
     - { role: dep-install, tags: dependency-install }
-    - role: setup-wg
+    - role: wg-setup
       tags: deploy-wg
-    - { role: setup-wg, tags: deploy-wg }
+    - { role: wg-setup, tags: deploy-wg }
