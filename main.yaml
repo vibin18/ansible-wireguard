@@ -5,10 +5,10 @@
   roles:
     - role: pre-kernel
       tags: pre-deploy
-    - { role: pre-kernel,  tags: pre-deploy }
+    - { role: pre-kernel, tags: pre-deploy }
     - role: dep-install
       tags: dependency-install
-    - { role: dep-install,  tags: dependency-install }
+    - { role: dep-install, tags: dependency-install }
     - role: setup-wg
       tags: deploy-wg
-    - { role: dep-install,  tags: deploy-wg }
+    - { role: setup-wg, tags: deploy-wg }
