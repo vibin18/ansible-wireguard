@@ -7,3 +7,4 @@ wireguard_peers:
   hosts:
     raspberrypi:
       ansible_host: 192.168.178.44
+      wireguard_remote_directory: "/etc/wireguard"
