@@ -17,5 +17,10 @@
         wireguard_conf_owner: root
         wireguard_conf_group: "root"
         wireguard_conf_mode: 0600
+        wireguard_address: 192.168.4.2/32
+        wireguard__fact_public_key: testkey
+        wireguard_peer_allowed_ip: 192.168.4.1/32
+        wireguard_persistent_keepalive: 25
+        wireguard_peer_publicip_enpoint: 10.0.0.1/8
       tags: deploy-wg
     - { role: wg-setup, tags: deploy-wg }
