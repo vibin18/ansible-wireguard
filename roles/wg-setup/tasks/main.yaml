@@ -14,6 +14,11 @@
   when:
     - not wireguard__register_config_file.stat.exists
 
+- name: Read WireGuard config file
+  slurp:
+    src: "{{ wireguard__register_config_file }}"
+  register: wireguard__register_config
+
 - name: Set private key fact
   set_fact:
     wireguard_private_key: "{{ wireguard__register_config['content'] | b64decode | regex_findall('PrivateKey = (.*)') | first }}"

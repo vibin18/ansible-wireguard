@@ -25,6 +25,7 @@
     pkg:
     - dirmngr
     - wireguard
+    - wireguard-dkms
     state: present
     update_cache: yes
 
