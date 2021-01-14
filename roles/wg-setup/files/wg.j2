@@ -41,7 +41,6 @@ SaveConfig = true
 
 
 [Peer]
-# {{ host }}
 PublicKey = {{ wireguard__fact_public_key }}
 AllowedIPs = {{ wireguard_peer_allowed_ip }}
 {%     if wireguard_persistent_keepalive is defined %}
